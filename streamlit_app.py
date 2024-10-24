@@ -207,7 +207,7 @@ if predict_button:
     'ACEI/ARB(yes1,no0)',
     'atrial fibrillation(yes1,no0）',
     'gender（male0;female1）'
-]
+
 
 # Create the title for the web app
 st.title('Machine learning-based prediction of one-year mortality in patients with non-ST-segment elevation myocardial infarction combined with diabetes mellitus.')
