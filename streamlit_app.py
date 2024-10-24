@@ -23,7 +23,8 @@ except AttributeError:
     'Glu(mmol/L)',
     'Hb(g/L)',
     'Scr(μmol/L)',
-    'DBP(mmHg)',import streamlit as st
+    'DBP(mmHg)',
+    ]
 
 
 # Load the model and scaler
