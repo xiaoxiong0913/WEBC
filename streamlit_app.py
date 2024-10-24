@@ -21,15 +21,15 @@ risk_cutoff = 0.1723
 
 # Define the feature names in the specified order
 feature_names = [
-    'Glu (mmol/L)',
-    'Hb (g/L)',
-    'Scr (μmol/L)',
-    'DBP (mmHg)',
-    'Neu (10^9/L)',
-    'Reperfusion Therapy (yes=1, no=0)',
-    'ACEI/ARB (yes=1, no=0)',
-    'Atrial Fibrillation (yes=1, no=0)',
-    'Gender (male=0, female=1)'
+    'Glu(mmol/L)',
+    'Hb(g/L)',
+    'Scr(μmol/L)',
+    'DBP(mmHg)',
+    'Neu（10^9/L）',
+    'reperfusion therapy (yes1,no0)',
+    'ACEI/ARB(yes1,no0)',
+    'atrial fibrillation(yes1,no0）',
+    'gender（male0;female1）'
 ]
 
 # Create the title for the web app
@@ -62,15 +62,15 @@ with st.form(key="unique_prediction_form"):
 # Process form submission
 if predict_button:
     data = {
-        "Glu (mmol/L)": glu,
-        "Hb (g/L)": hb,
-        "Scr (μmol/L)": scr,
-        "DBP (mmHg)": dbp,
-        "Neu (10^9/L)": neu,
-        "Reperfusion Therapy (yes=1, no=0)": reperfusion_therapy,
-        "ACEI/ARB (yes=1, no=0)": acei_arb,
-        "Atrial Fibrillation (yes=1, no=0)": atrial_fibrillation,
-        "Gender (male=0, female=1)": 0 if gender == 'male' else 1
+        "Glu(mmol/L)": glu,
+        "Hb(g/L)": hb,
+        "Scr(μmol/L)": scr,
+        "DBP(mmHg)": dbp,
+        "Neu（10^9/L）": neu,
+        "reperfusion therapy (yes1,no0)": reperfusion_therapy,
+        "ACEI/ARB(yes1,no0)": acei_arb,
+        "atrial fibrillation(yes1,no0）": atrial_fibrillation,
+        "gender（male0;female1）": 0 if gender == 'male' else 1
     }
 
     try:
@@ -91,7 +91,7 @@ if predict_button:
                         unsafe_allow_html=True)
             st.subheader("Personalized Recommendations:")
             # Gender-specific normal ranges
-            gender_value = 'male' if data['Gender (male=0, female=1)'] == 0 else 'female'
+            gender_value = 'male' if data['gender（male0;female1）'] == 0 else 'female'
 
             # GLU
             if glu < 3.9:
