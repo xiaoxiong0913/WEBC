@@ -43,19 +43,19 @@ This web-based calculator was developed based on the Logistic Regression model w
 """)
 
 # Create the input form
-with st.form("prediction_form"):
-    glu = st.slider('GLU (mmol/L)', min_value=1.0, max_value=35.0, value=18.0, step=0.1, key='Glu (mmol/L)')
-    hb = st.slider('Hb (g/L)', min_value=40.0, max_value=220.0, value=130.0, step=1.0, key='Hb (g/L)')
-    scr = st.slider('Scr (μmol/L)', min_value=30.0, max_value=1200.0, value=100.0, step=1.0, key='Scr (μmol/L)')
-    dbp = st.slider('DBP (mmHg)', min_value=40.0, max_value=180.0, value=80.0, step=1.0, key='DBP (mmHg)')
-    neu = st.slider('Neu (10^9/L)', min_value=1.0, max_value=25.0, value=5.0, step=0.1, key='Neu (10^9/L)')
+with st.form(key="unique_prediction_form"):
+    glu = st.slider('GLU (mmol/L)', min_value=1.0, max_value=35.0, value=18.0, step=0.1, key='unique_Glu')
+    hb = st.slider('Hb (g/L)', min_value=40.0, max_value=220.0, value=130.0, step=1.0, key='unique_Hb')
+    scr = st.slider('Scr (μmol/L)', min_value=30.0, max_value=1200.0, value=100.0, step=1.0, key='unique_Scr')
+    dbp = st.slider('DBP (mmHg)', min_value=40.0, max_value=180.0, value=80.0, step=1.0, key='unique_DBP')
+    neu = st.slider('Neu (10^9/L)', min_value=1.0, max_value=25.0, value=5.0, step=0.1, key='unique_Neu')
     reperfusion_therapy = st.selectbox('Reperfusion Therapy', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No',
-                                       key='Reperfusion Therapy (yes=1, no=0)')
+                                       key='unique_Reperfusion_Therapy')
     acei_arb = st.selectbox('ACEI/ARB', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No',
-                            key='ACEI/ARB (yes=1, no=0)')
+                            key='unique_ACEI_ARB')
     atrial_fibrillation = st.selectbox('Atrial Fibrillation', [0, 1], format_func=lambda x: 'Yes' if x == 1 else 'No',
-                                       key='Atrial Fibrillation (yes=1, no=0)')
-    gender = st.radio('Gender', ['male', 'female'], index=0, key='Gender (male=0, female=1)')
+                                       key='unique_Atrial_Fibrillation')
+    gender = st.radio('Gender', ['male', 'female'], index=0, key='unique_Gender')
 
     predict_button = st.form_submit_button("Predict")
 
